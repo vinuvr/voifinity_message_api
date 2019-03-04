@@ -13,7 +13,7 @@
 start(_StartType, _StartArgs) ->
   Dispatch = cowboy_router:compile([         
             {'_', [
-                {"/delete_message/[...]",voifinity_message_deletemsg_handler, []},
+                {"/message/[...]",voifinity_message_handler, []},
                 {"/account/[...]",voifinity_message_account_handler, []},
                 {"/group/[...]",voifinity_message_group_handler, []},
                 {"/user/[...]", voifinity_message_user_handler, []},
