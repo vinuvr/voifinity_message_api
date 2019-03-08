@@ -53,7 +53,7 @@ file_saving(Filename,Filetype,Data,Req) ->
 file_saving_starting(Filetype,Filename,Data,Req) ->
   FilenameStr = erlang:binary_to_list(Filename),
   UniqueId = uuid:uuid_to_string(uuid:get_v4()),
-  Fileurl  = "http://192.168.128.211/" ++ 
+  Fileurl  = "http://157.230.12.112/" ++ 
               Filetype ++ "/" ++ UniqueId ++ FilenameStr,
   Fileurlfinal= list_to_binary(Fileurl),
   case file:write_file("/usr/share/nginx/html/" ++ Filetype
