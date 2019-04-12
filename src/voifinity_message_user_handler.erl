@@ -19,5 +19,5 @@ json_creation([],Accumulator,Req) ->
   Out = jsx:encode(Accumulator),
   cowboy_req:reply(200, #{<<"content-type">> => <<"application/json">>},Out,Req);
 json_creation([H|T],Accumulator,Req) ->
-  Message = jsx:decode(element(8,element(5,H))),
+  Message = element(2, hd(jsx:decode(element(8,element(5,H))))),
   json_creation(T,[Message|Accumulator],Req).
